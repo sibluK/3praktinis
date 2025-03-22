@@ -1,0 +1,22 @@
+.search-bar-wrapper {
+    position: relative;
+}
+
+.search-bar {
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: #242424;
+    padding: 10px;
+    font-size: 1em;
+}
+
+.clear-input {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 5px;
+    top: 10px;
+    cursor: pointer;
+}
+

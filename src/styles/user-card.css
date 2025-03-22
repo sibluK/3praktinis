@@ -1,0 +1,11 @@
+.user-card {
+    display: grid;
+    grid-template-columns: 80px 200px 200px 200px;
+    padding: 10px 0;
+    text-align: left;
+    gap: 10px;
+}
+
+.user-card span:last-child {
+    margin-left: auto;
+}
