@@ -1,7 +1,8 @@
 import { UserCardProps } from "../types/types";
 import "../styles/user-card.css"
+import { memo } from "react";
 
-export default function UserCard({ user }: UserCardProps) {
+function UserCard({ user }: UserCardProps) {
 
     console.log("---User Card Rendered---")
 
@@ -14,3 +15,5 @@ export default function UserCard({ user }: UserCardProps) {
         </div>
     )
 }
+
+export default memo(UserCard);

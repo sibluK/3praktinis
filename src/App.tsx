@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import './App.css'
 import { User } from "./types/types"
 import useUserApi from "./hooks/useUsersApi"
@@ -12,7 +12,7 @@ function App() {
   const [fakeLoading, setFakeLoading] = useState<boolean>(false)
 
   useEffect(() => {
-    setFakeLoading(true);
+
     const timeout = setTimeout(() => {
       setFakeLoading(false);
     }, 1000)
@@ -26,13 +26,21 @@ function App() {
 
   const filteredUsers = filterUsersByQuery(users, query);
 
+  const handleQueryChange = useCallback((query: string) => {
+    setQuery(query);
+  }, [query])
+
   return (
     <div className="content">
       <div className="header">
         <span>Users</span>
         <SearchBar query={query} setQuery={setQuery}/>
       </div>
-      <UserList users={filteredUsers} fakeLoading={fakeLoading}/>
+      {fakeLoading ? (
+        <div className="searching-message">Searching...</div>
+      ) : (
+        <UserList users={filteredUsers} />
+      )}
     </div>
   )
 }

@@ -20,3 +20,7 @@
 .header span {
   font-size: 1.2em;
 }
+
+.searching-message {
+  padding-top: 10px;
+}

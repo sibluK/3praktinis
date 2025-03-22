@@ -15,6 +15,5 @@ export type UserCardProps = {
 }
 
 export type UserListProps = {
-  users: User[],
-  fakeLoading: boolean;
+  users: User[];
 }

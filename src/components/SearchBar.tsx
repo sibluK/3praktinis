@@ -1,8 +1,8 @@
-import { ChangeEvent } from "react"
+import { ChangeEvent, memo } from "react"
 import { SearchBarProps } from "../types/types"
 import "../styles/search-bar.css"
 
-export default function SearchBar({ query, setQuery }: SearchBarProps) {
+function SearchBar({ query, setQuery }: SearchBarProps) {
 
     function handleSearchInput(e: ChangeEvent<HTMLInputElement>) {
         setQuery(e.target.value);
@@ -18,8 +18,8 @@ export default function SearchBar({ query, setQuery }: SearchBarProps) {
         <div className="search-bar-wrapper">
             <input
                 className="search-bar"
-                value={query}
                 onChange={handleSearchInput}
+                value={query}
                 type="text"
                 placeholder="Search"
             />
@@ -31,7 +31,7 @@ export default function SearchBar({ query, setQuery }: SearchBarProps) {
                 </svg>
             )}
         </div>
-
-
     )
 }
+
+export default memo(SearchBar);
