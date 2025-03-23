@@ -9,6 +9,7 @@ export default function useUsersApi() {
 
     const USERS_URL = "http://localhost:3000/users"
 
+
     useEffect(() => {
         axios.get(USERS_URL)
             .then(response => {
